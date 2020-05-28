@@ -17,7 +17,7 @@ RUN chmod +x bin/setenv.sh
 # /Cloud One Application Security
 
 WORKDIR /opt/tomcat/webapps
-RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
+ADD UploadServlet30.war UploadServlet30.war
 
 EXPOSE 8080
 
