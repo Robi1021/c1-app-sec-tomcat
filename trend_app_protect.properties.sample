@@ -1,4 +1,5 @@
 key = <APP SEC KEY>
 secret = <APP SEC SECRET>
-log_file = stdout
+log_file = /appsec.log
 log_level = DEBUG
+defence.log_file = /defence.log
