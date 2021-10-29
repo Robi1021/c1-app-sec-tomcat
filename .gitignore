@@ -1,1 +1,2 @@
-trend_app_protect.properties
+logs/appsec.log
+logs/defence.log

@@ -2,28 +2,44 @@
 
 - [Cloud One Application Security with Tomcat](#cloud-one-application-security-with-tomcat)
   - [Build](#build)
-  - [Run](#run)
-  - [Access](#access)
   - [Test](#test)
   - [Support](#support)
   - [Contribute](#contribute)
 
 ## Build
 
+First, clone the repo
+
 ```sh
-docker build -t c1-tomcat .
+$ git clone https://github.com/mawinkler/c1-app-sec-tomcat.git
 ```
 
-## Run
+Now, set your Application Security keys
 
 ```sh
-docker run -p 8080:8080 c1-tomcat
+$ # YOUR KEYS HERE
+$ export APPSEC_KEY=<your key>
+$ export APPSEC_SECRET=<your secret>
+$ # YOUR DOCKER HUB USERNAME (required for deploy.sh only)
+$ export DOCKER_USERNAME=<your username>
 ```
 
-## Access
+Then build and run the container, which you can do by running
 
 ```sh
-http://192.168.0.27:8080/UploadServlet30/upload.jsp
+$ # Run app on your local docker engine
+$ ./run.sh
+
+$ # Deploy app with a loadbalancer service on your current kubernetes context
+$ ./deploy.sh
+```
+
+The tomcat uploader app is accessible on port 8080.
+
+Finally, upload malicious files.
+
+```sh
+http://<IP ADDRESS>:8080/UploadServlet30/upload.jsp
 ```
 
 ## Test
