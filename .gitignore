@@ -1,2 +1,3 @@
 logs/appsec.log
 logs/defence.log
+env.sh
